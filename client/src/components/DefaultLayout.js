@@ -15,7 +15,9 @@ import { Image } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { logout } from "../redux/actions/userActions";
-
+import banr1 from '../assets/19873.jpg';
+import './DefaultLayout.css'
+import { Footer } from "antd/lib/layout/layout";
 const { Header, Sider, Content } = Layout;
 
 class DefaultLayout extends React.Component {
@@ -29,7 +31,7 @@ class DefaultLayout extends React.Component {
         <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
           <div className="flex2">
             <Ictlogo />
-            <h1 className="hometitle">ALUMNI JOB PORTAL</h1>
+            <h2 className="hometitle">ALUMNI JOB PORTAL</h2>
           </div>
 
           <div className="flex1">
@@ -38,25 +40,25 @@ class DefaultLayout extends React.Component {
               mode="horizontal"
               defaultSelectedKeys={[window.location.pathname]}
             >
-              <Menu.Item key="/" icon={<BankOutlined />}>
+              <Menu.Item key="/">
                 <Link to="/">Home</Link>
               </Menu.Item>
-              <Menu.Item key="/profile" icon={<UserOutlined />}>
+              <Menu.Item key="/profile">
                 <Link to="/profile">Profile</Link>
               </Menu.Item>
-              <Menu.Item key="/appliedjobs" icon={<FileDoneOutlined />}>
+              <Menu.Item key="/appliedjobs" >
                 <Link to="/appliedjobs">Applied Jobs</Link>
               </Menu.Item>
-              <Menu.Item key="/postjob" icon={<UploadOutlined />}>
+              <Menu.Item key="/postjob">
                 <Link to="/postjob">Post Jobs</Link>
               </Menu.Item>
-              <Menu.Item key="/posted" icon={<UploadOutlined />}>
+              <Menu.Item key="/posted">
                 <Link to="/posted">Posted Jobs</Link>
               </Menu.Item>
-              <Menu.Item key="/login" icon={<UploadOutlined />}>
+              <Menu.Item key="/login">
                 <Link to="/login">Log In</Link>
               </Menu.Item>
-              <Menu.Item key="/register" icon={<UploadOutlined />}>
+              <Menu.Item key="/register">
                 <Link to="/register">Sign Up</Link>
               </Menu.Item>
               {/* <Menu.Item>LogOut</Menu.Item> */}
@@ -77,6 +79,12 @@ class DefaultLayout extends React.Component {
           >
             {this.props.children}
           </Content>
+          
+          <div className="footer">
+                <h5 id="footername">ictak.</h5>
+          </div>
+          
+        
         </Layout>
       </Layout>
     );

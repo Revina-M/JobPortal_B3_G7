@@ -6,7 +6,8 @@ import { Row, Col, Button } from "antd";
 import moment from "moment";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../redux/actions/userActions";
-
+import './css/Home.css';
+import banr1 from '../assets/19873.jpg';
 function Home() {
   const { jobs } = useSelector((state) => state.jobsReducer);
   const dispatch = useDispatch();
@@ -28,6 +29,8 @@ function Home() {
   return (
     <div>
       <DefaultLayout>
+
+       
         <Button
           type="button"
           className="btn btn-info"
@@ -40,6 +43,7 @@ function Home() {
           LogOut
         </button> */}
         {/* <Button>LogOut</Button> */}
+
         <div className="homebg">
           <Row gutter={16}>
             {jobs.map((job) => {

@@ -3,6 +3,7 @@ import DefaultLayout from "../components/DefaultLayout";
 import { Row, Col, Form, Tabs, Input, Button } from "antd";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../redux/actions/userActions";
+import './css/Profile.css'
 const { TextArea } = Input;
 const { TabPane } = Tabs;
 function Profile() {
@@ -25,6 +26,14 @@ function Profile() {
   return (
     <div>
       <DefaultLayout>
+        <div className="outerprofile">
+          <div className="prof">
+          <Row>
+      <Col span={3}>
+        <div className="profL"></div>
+        </Col>
+      <Col span={21}>
+        <div className="profR">
         <Tabs defaultActiveKey="1" activeKey={activeTab}>
           <TabPane tab="Personal Info" key="1">
             <Form
@@ -263,6 +272,7 @@ function Profile() {
                       </div>
                     )}
                   </Form.List>
+                  
                 </Col>
               </Row>
               <Button
@@ -276,6 +286,11 @@ function Profile() {
             </Form>
           </TabPane>
         </Tabs>
+        </div>
+        </Col>
+        </Row>
+        </div>
+        </div>
       </DefaultLayout>
     </div>
   );

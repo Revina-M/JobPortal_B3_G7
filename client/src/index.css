@@ -80,11 +80,6 @@ code {
   float: right !important;
 }
 
-.flex2 {
-  display: flex !important;
-  float: left !important;
-}
-
 p {
   font-weight: 500 !important;
   margin: 2px !important;
@@ -133,10 +128,7 @@ p {
   border-radius: 15px !important;
 }
 
-.hometitle {
-  color: white;
-  text-align: center;
-}
+
 
 .title {
   color: white;

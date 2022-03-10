@@ -8,7 +8,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
-
+import './css/Register.css'
 function Register({ navigate }) {
   const [email, setEmail] = useState("");
   const [username, setName] = useState("");
@@ -46,8 +46,21 @@ function Register({ navigate }) {
   return (
     <div>
       <DefaultLayout>
+       <div className="outerreg">
+          <div className="regbox">
+        <Row>
+        <Col span={8} push={8}>
+              <div className="regl">
+                <div className="ad">
+                  <h2 id="title1">Welcome</h2><br></br>
+                  <h6 id="regsubt">Please register for </h6>
+                  <h6 id="regsubt">better job opportunities.</h6>
+                </div>  
+              </div>
+            </Col>
+          <Col span={6} pull={6}>
         <br></br>
-        <h1>Register</h1>
+        <h3 id="regtitle">Register</h3>
 
         <div className="loginContainer">
           <Form onSubmit={submitHandler}>
@@ -56,18 +69,18 @@ function Register({ navigate }) {
               <Form.Control
                 type="name"
                 value={username}
-                placeholder="Enter name"
+               
                 onChange={(e) => setName(e.target.value)}
               />
               {/* <Form.Text className="error">{formErrorValues.name}</Form.Text> */}
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 value={email}
-                placeholder="Enter email"
+                
                 onChange={(e) => setEmail(e.target.value)}
               />
               {/* <Form.Text className="error">{formErrorValues.email}</Form.Text> */}
@@ -78,7 +91,7 @@ function Register({ navigate }) {
               <Form.Control
                 type="password"
                 value={password}
-                placeholder="Password"
+                
                 onChange={(e) => setPassword(e.target.value)}
               />
               {/* <Form.Text className="error">
@@ -91,7 +104,7 @@ function Register({ navigate }) {
               <Form.Control
                 type="password"
                 value={confirmpassword}
-                placeholder="Confirm Password"
+               
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
               {/* <Form.Text className="error">
@@ -109,7 +122,14 @@ function Register({ navigate }) {
               <Dropdown.Item eventKey="Employer">Employer</Dropdown.Item>
               <Dropdown.Item eventKey="Faculty">Faculty</Dropdown.Item>
             </DropdownButton>
-            <h5>{role}</h5>
+            <Form.Group controlId="role">
+              
+              <Form.Control
+                type="name"
+                value={role}
+                />
+              </Form.Group>
+            <h5></h5>
             <br></br>
             <br></br>
             <Button variant="primary" type="submit">
@@ -122,6 +142,10 @@ function Register({ navigate }) {
             </Col>
           </Row>
         </div>
+        </Col>
+        </Row>
+        </div>
+       </div>
       </DefaultLayout>
     </div>
   );
