@@ -52,4 +52,14 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, authUser };
+const updateUser = asyncHandler(async (req, res) => {
+  try {
+    await User.findOneAndUpdate({ _id: req.body._id }, req.body);
+    const user = await User.findOne({ _id: req.body._id });
+    res.send(user);
+  } catch (error) {
+    return res.status(400).json({ error });
+  }
+});
+
+module.exports = { registerUser, authUser, updateUser };

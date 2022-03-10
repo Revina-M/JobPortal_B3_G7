@@ -6,9 +6,9 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
-  USER_UPDATE_FAIL,
-  USER_UPDATE_REQUEST,
-  USER_UPDATE_SUCCESS,
+  // USER_UPDATE_FAIL,
+  // USER_UPDATE_REQUEST,
+  // USER_UPDATE_SUCCESS,
 } from "../constants/userConstants";
 import axios from "axios";
 import { message } from "antd";
@@ -81,17 +81,35 @@ export const logout = () => async (dispatch) => {
   dispatch({ type: USER_LOGOUT });
 };
 
-export const updateUser = (values) => async (dispatch) => {
-  const userid = JSON.parse(localStorage.getItem("user"))._id;
-
-  values._id = userid;
+export const updateUser = (values) => async (dispatch, getState) => {
+  try {
+    const userid = JSON.parse(localStorage.getItem("userInfo"))._id;
+    values._id = userid;
+  } catch (error) {
+    console.log("Not authorized");
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: "LOADING", payload: false });
+  }
 
   dispatch({ type: "LOADING", payload: true });
 
+  const {
+    userLogin: { userInfo },
+  } = getState();
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${userInfo.token}`,
+    },
+  };
+
   try {
-    const user = await axios.post("/api/users/update", values);
+    const user = await axios.post("/api/users/update", values, config);
     message.success("User updated successfully");
-    localStorage.setItem("user", JSON.stringify(user.data));
+    localStorage.setItem("userInfo", JSON.stringify(user.data));
     setTimeout(() => {
       window.location.reload();
     }, 1000);

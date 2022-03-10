@@ -21,7 +21,7 @@ function Profile() {
     dispatch(updateUser(finalObj));
   }
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("userInfo"));
   return (
     <div>
       <DefaultLayout>
