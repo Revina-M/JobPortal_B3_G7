@@ -1,4 +1,4 @@
-import DefaultLayout from "../components/DefaultLayout";
+import SignupLayout from "../components/SignupLayout";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
@@ -8,7 +8,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
-import './css/Register.css'
+import "./css/Register.css";
 function Register({ navigate }) {
   const [email, setEmail] = useState("");
   const [username, setName] = useState("");
@@ -45,108 +45,105 @@ function Register({ navigate }) {
 
   return (
     <div>
-      <DefaultLayout>
-       <div className="outerreg">
+      <SignupLayout>
+        <div className="outerreg">
           <div className="regbox">
-        <Row>
-        <Col span={8} push={8}>
-              <div className="regl">
-                <div className="ad">
-                  <h2 id="title1">Welcome</h2><br></br>
-                  <h6 id="regsubt">Please register for </h6>
-                  <h6 id="regsubt">better job opportunities.</h6>
-                </div>  
-              </div>
-            </Col>
-          <Col span={6} pull={6}>
-        <br></br>
-        <h3 id="regtitle">Register</h3>
+            <Row>
+              <Col span={8} push={8}>
+                <div className="regl">
+                  <div className="ad">
+                    <h2 id="title1">Welcome</h2>
+                    <br></br>
+                    <h6 id="regsubt">Please register for </h6>
+                    <h6 id="regsubt">better job opportunities.</h6>
+                  </div>
+                </div>
+              </Col>
+              <Col span={6} pull={6}>
+                <br></br>
+                <h3 id="regtitle">Register</h3>
 
-        <div className="loginContainer">
-          <Form onSubmit={submitHandler}>
-            <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="name"
-                value={username}
-               
-                onChange={(e) => setName(e.target.value)}
-              />
-              {/* <Form.Text className="error">{formErrorValues.name}</Form.Text> */}
-            </Form.Group>
+                <div className="loginContainer">
+                  <Form onSubmit={submitHandler}>
+                    <Form.Group controlId="name">
+                      <Form.Label>Name</Form.Label>
+                      <Form.Control
+                        type="name"
+                        value={username}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                      {/* <Form.Text className="error">{formErrorValues.name}</Form.Text> */}
+                    </Form.Group>
 
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                value={email}
-                
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              {/* <Form.Text className="error">{formErrorValues.email}</Form.Text> */}
-            </Form.Group>
+                    <Form.Group controlId="formBasicEmail">
+                      <Form.Label>Email</Form.Label>
+                      <Form.Control
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                      {/* <Form.Text className="error">{formErrorValues.email}</Form.Text> */}
+                    </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                value={password}
-                
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              {/* <Form.Text className="error">
+                    <Form.Group controlId="formBasicPassword">
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                      {/* <Form.Text className="error">
                 {formErrorValues.password}
               </Form.Text> */}
-            </Form.Group>
+                    </Form.Group>
 
-            <Form.Group controlId="confirmPassword">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
-                type="password"
-                value={confirmpassword}
-               
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
-              {/* <Form.Text className="error">
+                    <Form.Group controlId="confirmPassword">
+                      <Form.Label>Confirm Password</Form.Label>
+                      <Form.Control
+                        type="password"
+                        value={confirmpassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                      />
+                      {/* <Form.Text className="error">
                 {formErrorValues.confirmpassword}
               </Form.Text> */}
-            </Form.Group>
-            <br></br>
-            <DropdownButton
-              title="Select role"
-              value={role}
-              id="dropdown-menu-align-right"
-              onSelect={handleSelect}
-            >
-              <Dropdown.Item eventKey="JobSeeker">JobSeeker</Dropdown.Item>
-              <Dropdown.Item eventKey="Employer">Employer</Dropdown.Item>
-              <Dropdown.Item eventKey="Faculty">Faculty</Dropdown.Item>
-            </DropdownButton>
-            <Form.Group controlId="role">
-              
-              <Form.Control
-                type="name"
-                value={role}
-                />
-              </Form.Group>
-            <h5></h5>
-            <br></br>
-            <br></br>
-            <Button variant="primary" type="submit">
-              Register
-            </Button>
-          </Form>
-          <Row className="py-3">
-            <Col>
-              Have an Account ? <Link to="/login">Login</Link>
-            </Col>
-          </Row>
+                    </Form.Group>
+                    <br></br>
+                    <DropdownButton
+                      title="Select role"
+                      value={role}
+                      id="dropdown-menu-align-right"
+                      onSelect={handleSelect}
+                    >
+                      <Dropdown.Item eventKey="JobSeeker">
+                        JobSeeker
+                      </Dropdown.Item>
+                      <Dropdown.Item eventKey="Employer">
+                        Employer
+                      </Dropdown.Item>
+                      <Dropdown.Item eventKey="Faculty">Faculty</Dropdown.Item>
+                    </DropdownButton>
+                    <Form.Group controlId="role">
+                      <Form.Control type="name" value={role} />
+                    </Form.Group>
+                    <h5></h5>
+                    <br></br>
+                    <br></br>
+                    <Button variant="primary" type="submit">
+                      Register
+                    </Button>
+                  </Form>
+                  <Row className="py-3">
+                    <Col>
+                      Have an Account ? <Link to="/login">Login</Link>
+                    </Col>
+                  </Row>
+                </div>
+              </Col>
+            </Row>
+          </div>
         </div>
-        </Col>
-        </Row>
-        </div>
-       </div>
-      </DefaultLayout>
+      </SignupLayout>
     </div>
   );
 }

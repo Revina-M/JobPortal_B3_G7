@@ -117,8 +117,7 @@ p {
 }
 
 .jobinfobg {
-  background-image: url(./assets/b2.jfif);
-  background-size: cover;
+  background-color: rgb(252, 52, 62);
 }
 
 .jobdetailsbg {

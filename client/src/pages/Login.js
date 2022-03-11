@@ -1,4 +1,4 @@
-import DefaultLayout from "../components/DefaultLayout";
+import SignupLayout from "../components/SignupLayout";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
@@ -39,7 +39,7 @@ function Login({ navigate }) {
 
   return (
     <div>
-      <DefaultLayout>
+      <SignupLayout>
         <br></br>
         <div className="outerlog">
           <div className="log">
@@ -99,7 +99,7 @@ function Login({ navigate }) {
             </Row>
           </div>
         </div>
-      </DefaultLayout>
+      </SignupLayout>
     </div>
   );
 }

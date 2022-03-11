@@ -49,7 +49,7 @@ function Home() {
           <Row gutter={16}>
             {jobs.map((job) => {
               return (
-                <Col lg={8} sm={24}>
+                <Col lg={12} sm={24}>
                   <div className="job-div bs m-3 p-2">
                     <h4>{job.title}</h4>
                     <p>{job.company}</p>

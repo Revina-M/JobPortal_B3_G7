@@ -26,7 +26,7 @@ import Filter from "./Filter";
 import { Footer } from "antd/lib/layout/layout";
 const { Header, Sider, Content } = Layout;
 
-class DefaultLayout extends React.Component {
+class SignupLayout extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -70,9 +70,9 @@ class DefaultLayout extends React.Component {
               mode="horizontal"
               defaultSelectedKeys={[window.location.pathname]}
             >
-              {/* <Menu.Item key="/">
-                <Button onClick={this.Gohome}>Home</Button>
-              </Menu.Item> */}
+              <Menu.Item key="/">
+                <Link to="/">Home</Link>
+              </Menu.Item>
               {/* <Menu.Item key="/logout" icon={<LogoutOutlined />}>
                 <Link to="/" onClick={this.logout}>
                   Log Out
@@ -130,4 +130,4 @@ class DefaultLayout extends React.Component {
   }
 }
 
-export default DefaultLayout;
+export default SignupLayout;
