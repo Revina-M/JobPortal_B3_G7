@@ -72,7 +72,7 @@ function PostedJobs() {
     var obj = {
       title: job.title,
       company: job.company,
-      postedOn: moment(job.createdAt).format("MMM DD YYY"),
+      postedOn: moment(job.createdAt).format("MMM DD YYYY"),
       appliedCandidates: job.appliedCandidates.length,
       completeJobData: job,
     };

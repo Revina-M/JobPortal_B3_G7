@@ -58,6 +58,7 @@ class AlumniLayout extends React.Component {
               <Menu.Item key="/profile">
                 <Link to="/profile">Profile</Link>
               </Menu.Item>
+
               <Menu.Item key="/appliedjobs">
                 <Link to="/appliedjobs">Applied Jobs</Link>
               </Menu.Item>

@@ -44,7 +44,7 @@ export const postJob = (values) => async (dispatch, getState) => {
     message.success("Job Posted Successfully");
 
     setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = "/postjob";
     }, 1000);
   } catch (error) {
     console.log(error);
@@ -73,7 +73,7 @@ export const editJob = (values) => async (dispatch, getState) => {
     message.success("Job Updated Successfully");
 
     setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = "/editjob";
     }, 1000);
   } catch (error) {
     console.log(error);
@@ -105,7 +105,7 @@ export const applyJob = (job) => async (dispatch, getState) => {
     message.success("Job Applied Successfully");
 
     setTimeout(() => {
-      window.location.href = "/";
+      window.location.href = "/applyjob";
     }, 1000);
   } catch (error) {
     console.log(error);

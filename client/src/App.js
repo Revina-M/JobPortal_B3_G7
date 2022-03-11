@@ -66,6 +66,7 @@ function App() {
             exact
             element={<ProtectedRoute element={<Profile />} />}
           />
+
           <Route
             path="/jobs/:id"
             exact
