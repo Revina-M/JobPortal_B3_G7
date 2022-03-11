@@ -104,9 +104,9 @@ export const applyJob = (job) => async (dispatch, getState) => {
     dispatch({ type: "LOADING", payload: false });
     message.success("Job Applied Successfully");
 
-    setTimeout(() => {
-      window.location.href = "/applyjob";
-    }, 1000);
+    // setTimeout(() => {
+    //   window.location.href = "/applyjob";
+    // }, 1000);
   } catch (error) {
     console.log(error);
     dispatch({ type: "LOADING", payload: false });

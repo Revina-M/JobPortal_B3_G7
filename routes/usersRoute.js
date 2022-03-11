@@ -3,7 +3,7 @@ const {
   registerUser,
   authUser,
   updateUser,
-  getAllAppliedUsers,
+  getAllUsers,
 } = require("../controllers/userControllers");
 const { protect } = require("../models/middlewares/authMiddleware");
 
@@ -12,6 +12,6 @@ const router = express.Router();
 router.route("/register").post(registerUser);
 router.route("/login").post(authUser);
 router.route("/update").post(protect, updateUser);
-router.route("/getallusers").post(protect, getAllAppliedUsers);
+router.route("/getallusers").post(protect, getAllUsers);
 
 module.exports = router;
