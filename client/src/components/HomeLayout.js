@@ -30,10 +30,10 @@ class HomeLayout extends React.Component {
   constructor(props) {
     super(props);
   }
-  logout = () => {
-    localStorage.removeItem("userInfo");
-    window.location.reload();
-  };
+  // logout = () => {
+  //   localStorage.removeItem("userInfo");
+  //   window.location.reload();
+  // };
 
   render() {
     const user = JSON.parse(localStorage.getItem("userInfo"));
@@ -77,11 +77,11 @@ class HomeLayout extends React.Component {
               <Menu.Item key="/register">
                 <Link to="/register">Sign Up</Link>
               </Menu.Item>
-              <Menu.Item key="/logout" icon={<LogoutOutlined />}>
+              {/* <Menu.Item key="/logout" icon={<LogoutOutlined />}>
                 <Link to="/" onClick={this.logout}>
                   Log Out
                 </Link>
-              </Menu.Item>
+              </Menu.Item> */}
               {/* <Menu.Item>LogOut</Menu.Item> */}
             </Menu>
           </div>
