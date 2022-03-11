@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
 import { Table, Modal } from "antd";
 import moment from "moment";
+import Navbar from "../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import {
   MenuUnfoldOutlined,
@@ -129,6 +130,7 @@ function PostedJobs() {
   return (
     <div>
       <DefaultLayout>
+        <Navbar></Navbar>
         <h1>Posted Jobs</h1>
         <Table columns={columns} dataSource={dataSource} />
         <Modal

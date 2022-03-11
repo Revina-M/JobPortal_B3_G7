@@ -30,9 +30,10 @@ class EmployerLayout extends React.Component {
   constructor(props) {
     super(props);
   }
-  logout = () => {
+  logout = ({ navigate }) => {
     localStorage.removeItem("userInfo");
-    window.location.reload();
+    navigate = useNavigate();
+    navigate("/");
   };
 
   render() {
@@ -64,7 +65,7 @@ class EmployerLayout extends React.Component {
               <Menu.Item key="/posted">
                 <Link to="/posted">Posted Jobs</Link>
               </Menu.Item>
-              <Menu.Item key="/logout" icon={<LogoutOutlined />}>
+              <Menu.Item key="/logout">
                 <Link to="/" onClick={this.logout}>
                   Log Out
                 </Link>

@@ -2,6 +2,7 @@ import React from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { useSelector, useDispatch } from "react-redux";
 import { Table } from "antd";
+import Navbar from "../components/Navbar";
 function AppliedJobs() {
   const { jobs } = useSelector((state) => state.jobsReducer);
 
@@ -45,6 +46,7 @@ function AppliedJobs() {
   return (
     <div>
       <DefaultLayout>
+        <Navbar></Navbar>
         <h1>AppliedJobs</h1>
         <Table columns={columns} dataSource={userAppliedJobs} />
       </DefaultLayout>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Button, Tag } from "antd";
 import moment from "moment";
+import Navbar from "../components/Navbar";
 import { applyJob } from "../redux/actions/jobActions";
 
 function JobInfo() {
@@ -26,6 +27,7 @@ function JobInfo() {
   return (
     <div>
       <DefaultLayout>
+        <Navbar></Navbar>
         <div className="jobinfobg">
           <br></br>
           <div className="jobdetailsbg  p-2">

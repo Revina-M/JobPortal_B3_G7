@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import DefaultLayout from "../components/DefaultLayout";
 import { useSelector } from "react-redux";
+import Navbar from "../components/Navbar";
 
 function UserInfo() {
   const { id } = useParams();
@@ -10,6 +11,7 @@ function UserInfo() {
   return (
     <div>
       <DefaultLayout>
+        <Navbar></Navbar>
         {user && (
           <div>
             <h3>

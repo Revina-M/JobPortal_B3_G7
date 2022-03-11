@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 dbConnect();
 async function dbConnect() {
   try {
-    // await mongoose.connect('mongodb+srv://gana:gana@fsd.m5nes.mongodb.net/jobportal',{useNewUrlParser:true});
+    // await mongoose.connect(
+    //   "mongodb+srv://FSDB3group7:FSDB3group7@ictakcluster.rpo6w.mongodb.net/JOBPORTAL?retryWrites=true&w=majority",
+    //   { useNewUrlParser: true }
+    // );
     await mongoose.connect(
       "mongodb+srv://userone:userone@ictakfiles.mxjse.mongodb.net/JOBPORTAL?retryWrites=true&w=majority",
       { useNewUrlParser: true }

@@ -24,12 +24,6 @@ function Register({ navigate }) {
   const userRegister = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userRegister;
 
-  useEffect(() => {
-    if (userInfo) {
-      navigate("/");
-    }
-  }, [navigate, userInfo]);
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -42,6 +36,12 @@ function Register({ navigate }) {
     console.log(e);
     setRole(e);
   };
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/login");
+    }
+  }, [navigate, userInfo]);
 
   return (
     <div>
