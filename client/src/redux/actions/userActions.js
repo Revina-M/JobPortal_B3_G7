@@ -119,3 +119,23 @@ export const updateUser = (values) => async (dispatch, getState) => {
     dispatch({ type: "LOADING", payload: false });
   }
 };
+
+export const getAllUsers = () => async (dispatch, getState) => {
+  dispatch({ type: "LOADING", payload: true });
+  const {
+    userLogin: { userInfo },
+  } = getState();
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${userInfo.token}`,
+    },
+  };
+  try {
+    const response = await axios.get("/api/users/getallusers", config);
+    dispatch({ type: "GET_ALL_USERS", payload: response.data });
+    dispatch({ type: "LOADING", payload: false });
+  } catch (error) {
+    dispatch({ type: "LOADING", payload: false });
+  }
+};

@@ -16,7 +16,7 @@ import {
 } from "@ant-design/icons";
 import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { Image, Button } from "antd";
+import { Image } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { logout } from "../redux/actions/userActions";
@@ -26,33 +26,13 @@ import Filter from "./Filter";
 import { Footer } from "antd/lib/layout/layout";
 const { Header, Sider, Content } = Layout;
 
-class DefaultLayout extends React.Component {
+class HomeLayout extends React.Component {
   constructor(props) {
     super(props);
   }
   logout = () => {
     localStorage.removeItem("userInfo");
     window.location.reload();
-  };
-
-  gohome = ({ navigate }) => {
-    const userLogin = useSelector((state) => state.userLogin);
-    const { userInfo } = userLogin;
-    navigate = useNavigate();
-
-    useEffect(() => {
-      if (userInfo) {
-        if (userInfo.role === "Admin") {
-          navigate("/admindashboard");
-        } else if (userInfo.role === "JobSeeker") {
-          navigate("/alumnidashboard");
-        } else if (userInfo.role === "Employer") {
-          navigate("/employerdashboard");
-        } else if (userInfo.role === "Faculty") {
-          navigate("/facultydashboard");
-        }
-      }
-    }, [navigate, userInfo]);
   };
 
   render() {
@@ -72,12 +52,7 @@ class DefaultLayout extends React.Component {
               defaultSelectedKeys={[window.location.pathname]}
             >
               <Menu.Item key="/">
-                <Button onClick={this.gohome}>Home</Button>
-              </Menu.Item>
-              <Menu.Item key="/logout" icon={<LogoutOutlined />}>
-                <Link to="/" onClick={this.logout}>
-                  Log Out
-                </Link>
+                <Link to="/">Home</Link>
               </Menu.Item>
               {/* <Menu.Item key="/profile">
                 <Link to="/profile">Profile</Link>
@@ -96,13 +71,17 @@ class DefaultLayout extends React.Component {
                   Log Out
                 </Link>
               </Menu.Item> */}
-              {/* <Menu.Item key="/login">
+              <Menu.Item key="/login">
                 <Link to="/login">Log In</Link>
               </Menu.Item>
               <Menu.Item key="/register">
                 <Link to="/register">Sign Up</Link>
-              </Menu.Item> */}
-
+              </Menu.Item>
+              <Menu.Item key="/logout" icon={<LogoutOutlined />}>
+                <Link to="/" onClick={this.logout}>
+                  Log Out
+                </Link>
+              </Menu.Item>
               {/* <Menu.Item>LogOut</Menu.Item> */}
             </Menu>
           </div>
@@ -131,4 +110,4 @@ class DefaultLayout extends React.Component {
   }
 }
 
-export default DefaultLayout;
+export default HomeLayout;

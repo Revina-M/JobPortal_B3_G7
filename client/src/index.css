@@ -11,6 +11,11 @@ body {
   /* font-family: 'Montserrat', sans-serif !important; */
 }
 
+html,
+body {
+  overflow-x: hidden !important;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -104,12 +109,11 @@ p {
   background: rgba(255, 255, 255, 0.3);
 }
 .site-layout .site-layout-background {
-  background-color: white;
+  background-color: rgb(252, 52, 62);
 }
 
 .homebg {
-  background-image: url(./assets/bg1.jpg);
-  background-size: cover;
+  background-color: rgb(252, 52, 62);
 }
 
 .jobinfobg {
@@ -127,8 +131,6 @@ p {
   margin-bottom: 3%;
   border-radius: 15px !important;
 }
-
-
 
 .title {
   color: white;
@@ -159,4 +161,8 @@ textarea {
 
 .ant-message {
   z-index: 9999 !important;
+}
+
+.ant-btn {
+  height: 33px !important;
 }

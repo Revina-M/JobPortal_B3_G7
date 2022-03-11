@@ -62,4 +62,13 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser, authUser, updateUser };
+const getAllAppliedUsers = asyncHandler(async (req, res) => {
+  try {
+    const users = await User.find();
+    res.send(users);
+  } catch (error) {
+    return res.status(400).json({ error });
+  }
+});
+
+module.exports = { registerUser, authUser, updateUser, getAllAppliedUsers };

@@ -4,13 +4,18 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { jobsReducer } from "./reducers/jobsReducer";
 import { loaderReducer } from "./reducers/loaderReducer";
-import { userLoginReducer, userRegisterReducer } from "./reducers/userReducers";
+import {
+  userLoginReducer,
+  userRegisterReducer,
+  userReducers,
+} from "./reducers/userReducers";
 
 const rootReducer = combineReducers({
   jobsReducer: jobsReducer,
   loaderReducer: loaderReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userReducers: userReducers,
 });
 
 const userInfoFromStorage = localStorage.getItem("userInfo")

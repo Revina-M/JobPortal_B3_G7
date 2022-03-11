@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import HomeLayout from "../components/HomeLayout";
+import AlumniLayout from "../components/AlumniLayout";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllJobs } from "../redux/actions/jobActions";
 import { Row, Col, Button } from "antd";
@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../redux/actions/userActions";
 import "./css/Home.css";
 import banr1 from "../assets/19873.jpg";
-function Home() {
+function Alumnidashboard() {
   const { jobs } = useSelector((state) => state.jobsReducer);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -28,15 +28,7 @@ function Home() {
 
   return (
     <div>
-      <HomeLayout>
-        {/* <Button
-          type="button"
-          className="btn btn-info"
-          onClick={logoutHandler}
-          variant="info"
-        >
-          LogOut
-        </Button>{" "} */}
+      <AlumniLayout>
         {/* <button type="button" class="btn btn-info" onClick={logoutHandler}>
           LogOut
         </button> */}
@@ -68,10 +60,7 @@ function Home() {
 
                     <hr />
                     <div className="flex justify-content-between">
-                      {/* <Link to={`/jobs/${job._id}`}>
-                        <Button>View</Button>
-                      </Link> */}
-                      <Link to="/login">
+                      <Link to={`/jobs/${job._id}`}>
                         <Button>View</Button>
                       </Link>
                       <p>
@@ -85,9 +74,9 @@ function Home() {
             })}
           </Row>
         </div>
-      </HomeLayout>
+      </AlumniLayout>
     </div>
   );
 }
 
-export default Home;
+export default Alumnidashboard;

@@ -40,3 +40,19 @@ export const userRegisterReducer = (state = {}, action) => {
       return state;
   }
 };
+
+const initialStateuser = {
+  users: [],
+};
+export const userReducers = (state = initialStateuser, action) => {
+  switch (action.type) {
+    case "GET_ALL_USERS": {
+      return {
+        ...state,
+        users: action.payload,
+      };
+    }
+    default:
+      return state;
+  }
+};
