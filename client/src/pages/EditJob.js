@@ -4,7 +4,6 @@ import { Row, Col, Form, Tabs, Input, Button, Select } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { editJob } from "../redux/actions/jobActions";
 import { useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
 
 const { TextArea } = Input;
 const { TabPane } = Tabs;
@@ -35,7 +34,6 @@ function EditJob() {
   return (
     <div>
       <DefaultLayout>
-        <Navbar></Navbar>
         <Tabs defaultActiveKey="0" activeKey={activeTab}>
           <TabPane tab="Job Info" key="0">
             <Form

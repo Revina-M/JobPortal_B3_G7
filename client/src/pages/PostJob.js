@@ -3,7 +3,6 @@ import DefaultLayout from "../components/DefaultLayout";
 import { Row, Col, Form, Tabs, Input, Button, Select } from "antd";
 import { useDispatch } from "react-redux";
 import { postJob } from "../redux/actions/jobActions";
-import Navbar from "../components/Navbar";
 
 const { TextArea } = Input;
 const { TabPane } = Tabs;
@@ -28,7 +27,6 @@ function PostJob() {
   return (
     <div>
       <DefaultLayout>
-        <Navbar></Navbar>
         <Tabs defaultActiveKey="0" activeKey={activeTab}>
           <TabPane tab="Job Info" key="0">
             <Form layout="vertical" onFinish={onFirstFormFinish}>

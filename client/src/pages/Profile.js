@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import DefaultLayout from "../components/DefaultLayout";
-import Navbar from "../components/Navbar";
 import { Row, Col, Form, Tabs, Input, Button } from "antd";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../redux/actions/userActions";
@@ -27,7 +26,6 @@ function Profile() {
   return (
     <div>
       <DefaultLayout>
-        <Navbar></Navbar>
         <div className="outerprofile">
           <div className="prof">
             <Row>

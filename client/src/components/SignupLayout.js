@@ -70,7 +70,7 @@ class SignupLayout extends React.Component {
               mode="horizontal"
               defaultSelectedKeys={[window.location.pathname]}
             >
-              <Menu.Item key="/">
+              <Menu.Item key="/" icon={<HomeOutlined />}>
                 <Link to="/">Home</Link>
               </Menu.Item>
               {/* <Menu.Item key="/logout" icon={<LogoutOutlined />}>
