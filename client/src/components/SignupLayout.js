@@ -73,11 +73,11 @@ class SignupLayout extends React.Component {
               <Menu.Item key="/">
                 <Link to="/">Home</Link>
               </Menu.Item>
-              <Menu.Item key="/logout" icon={<LogoutOutlined />}>
+              {/* <Menu.Item key="/logout" icon={<LogoutOutlined />}>
                 <Link to="/" onClick={this.logout}>
                   Log Out
                 </Link>
-              </Menu.Item>
+              </Menu.Item> */}
               {/* <Menu.Item key="/profile">
                 <Link to="/profile">Profile</Link>
               </Menu.Item>

@@ -11,6 +11,6 @@ const router = express.Router();
 router.route("/getalljobs").get(getJobs);
 router.route("/postjob").post(protect, postJobs);
 router.route("/editjob").post(protect, editJobs);
-router.route("/applyjob").post(protect, applyJobs);
+router.route("/applyjob").post(applyJobs);
 
 module.exports = router;

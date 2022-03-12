@@ -81,32 +81,28 @@ export const editJob = (values) => async (dispatch, getState) => {
   }
 };
 
+// const {
+//   userLogin: { userInfo },
+// } = getState();
+
+// const config = {
+//   headers: {
+//     Authorization: `Bearer ${userInfo.token}`,
+//   },
+// };
+
 export const applyJob = (job) => async (dispatch, getState) => {
   dispatch({ type: "LOADING", payload: true });
-  const {
-    userLogin: { userInfo },
-  } = getState();
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${userInfo.token}`,
-    },
-  };
-
   const user = JSON.parse(localStorage.getItem("userInfo"));
 
   try {
-    const response = await axios.post(
-      "/api/jobs/applyjob",
-      { job, user },
-      config
-    );
+    await axios.post("/api/jobs/applyjob", { job, user });
     dispatch({ type: "LOADING", payload: false });
     message.success("Job Applied Successfully");
 
-    // setTimeout(() => {
-    //   window.location.href = "/applyjob";
-    // }, 1000);
+    setTimeout(() => {
+      window.location.href = "/alumnidashboard";
+    }, 1000);
   } catch (error) {
     console.log(error);
     dispatch({ type: "LOADING", payload: false });

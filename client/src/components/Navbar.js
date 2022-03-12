@@ -34,7 +34,7 @@ function Navbar(props) {
 
   return (
     <div>
-      <Button onClick={Gohome}>Home</Button>
+      {/* <Button onClick={Gohome}>Home</Button> */}
       <Button onClick={logoutHandler}>Logout</Button>
     </div>
   );

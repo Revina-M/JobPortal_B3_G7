@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 
 function UserInfo() {
   const { id } = useParams();
-  const { users } = useSelector((state) => state.usersReducer);
+  const { users } = useSelector((state) => state.userReducers);
   const user = users.find((user) => user._id === id);
   return (
     <div>

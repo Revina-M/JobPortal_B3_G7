@@ -9,7 +9,7 @@ import AppliedJobs from "./pages/AppliedJobs";
 import PostJob from "./pages/PostJob";
 import Profile from "./pages/Profile";
 import { css } from "@emotion/react";
-import FadeLoader from "react-spinners/CircleLoader";
+import FadeLoader from "react-spinners/FadeLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllJobs } from "./redux/actions/jobActions";
 import { useEffect } from "react";
