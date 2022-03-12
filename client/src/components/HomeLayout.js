@@ -10,6 +10,7 @@ import {
   PlusOutlined,
   CheckOutlined,
   LoginOutlined,
+  CloudUploadOutlined,
   LogoutOutlined,
 } from "@ant-design/icons";
 import React from "react";
@@ -62,10 +63,10 @@ class DefaultLayout extends React.Component {
             mode="inline"
             defaultSelectedKeys={[window.location.pathname]}
           >
-            <Menu.Item key="/login" icon={<LogoutOutlined />}>
+            <Menu.Item key="/login" icon={<LoginOutlined />}>
               <Link to="/login">Log In</Link>
             </Menu.Item>
-            <Menu.Item key="/register" icon={<LoginOutlined />}>
+            <Menu.Item key="/register" icon={<CloudUploadOutlined />}>
               <Link to="/register">Sign Up</Link>
             </Menu.Item>
           </Menu>
