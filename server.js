@@ -4,7 +4,7 @@ const db = require("./db.js");
 const dotenv = require("dotenv");
 const jobsRoute = require("./routes/jobsRoute");
 const usersRoute = require("./routes/usersRoute");
-// const path = require("path");
+const path = require("path");
 
 dotenv.config();
 
@@ -13,6 +13,14 @@ app.use("/api/jobs", jobsRoute);
 app.use("/api/users", usersRoute);
 
 // -------deployment------
+
+if (process.env.NODE_ENV === "production") {
+  app.use("/", express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+  });
+}
 
 // __dirname = path.resolve();
 // if (process.env.NODE_ENV === "production") {
